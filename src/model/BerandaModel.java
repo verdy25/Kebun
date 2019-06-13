@@ -5,11 +5,13 @@
  */
 package model;
 
+import java.awt.Image;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import javax.swing.ImageIcon;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -22,7 +24,7 @@ public class BerandaModel extends connector.connection{
     private Statement statement;
     private ResultSet resultSet;
 
-    public int id;
+    public int id_pelapak;
 
     public BerandaModel() {
         try {
@@ -70,5 +72,32 @@ public class BerandaModel extends connector.connection{
         }
         return model;
 
+    }
+    
+    public ImageIcon getImage(byte[] img) {
+        ImageIcon image = new ImageIcon(img);
+        Image im = image.getImage();
+        Image myImg = im.getScaledInstance(175, 175, Image.SCALE_SMOOTH);
+        ImageIcon newImage = new ImageIcon(myImg);
+        return newImage;
+    }
+    
+    public String[] getPelapak(int id) {
+        String data[] = new String[2];
+        try {
+            String sql = "select * from user u join lapak l on l.id_pemilik = u.id WHERE l.id_lapak = ?";
+            connection = Connection();
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setInt(1, id);
+            resultSet = preparedStatement.executeQuery();
+            resultSet.next();
+            data[0] = resultSet.getString("email");
+            data[1] = resultSet.getString("hp");
+        } catch (SQLException se) {
+            System.out.println(se.getMessage());
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        return data;
     }
 }

@@ -66,6 +66,14 @@ public class Lapaak extends javax.swing.JFrame {
         return phone;
     }
 
+    public JLabel getKomoditi() {
+        return komoditi;
+    }
+
+    public void setKomoditi(String komoditi) {
+        this.komoditi.setText(komoditi);
+    }
+
     public void setPhone(String phone) {
         this.phone.setText(phone);
     }
@@ -93,7 +101,7 @@ public class Lapaak extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         tanggal = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
+        komoditi = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         kebutuhan = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
@@ -127,9 +135,9 @@ public class Lapaak extends javax.swing.JFrame {
         tanggal.setText(": 1");
         jPanel2.add(tanggal, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 110, 170, -1));
 
-        jLabel8.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel8.setText(": 1");
-        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 150, 170, -1));
+        komoditi.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        komoditi.setText(": 1");
+        jPanel2.add(komoditi, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 150, 170, -1));
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Assets/imgKebutuhan.png"))); // NOI18N
@@ -267,12 +275,12 @@ public class Lapaak extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel judul;
     private javax.swing.JLabel kebutuhan;
+    private javax.swing.JLabel komoditi;
     private javax.swing.JLabel phone;
     private javax.swing.JLabel tanggal;
     // End of variables declaration//GEN-END:variables
