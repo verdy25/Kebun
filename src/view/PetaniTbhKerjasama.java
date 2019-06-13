@@ -5,6 +5,13 @@
  */
 package view;
 
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JLabel;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+
 /**
  *
  * @author verdy
@@ -14,8 +21,57 @@ public class PetaniTbhKerjasama extends javax.swing.JPanel {
     /**
      * Creates new form PetaniTbhKerjasama
      */
+
     public PetaniTbhKerjasama() {
         initComponents();
+    }
+
+    public JButton btnSelesai() {
+        return btnSelesai;
+    }
+
+    public JComboBox<String> getCbUnit() {
+        return cbUnit;
+    }
+
+    public JTextArea getDeskripsi() {
+        return deskripsi;
+    }
+
+    public String setDeskripsi(String deskripsi) {
+        return deskripsi;
+    }
+
+    public JButton btnUnggah() {
+        return btnUnggah;
+    }
+
+    public JLabel image() {
+        return image;
+    }
+
+    public JTextField getJudul() {
+        return judul;
+    }
+
+    public String setJudul(String judul) {
+        return judul;
+    }
+
+    public JTextField getKebutuhan() {
+        return kebutuhan;
+    }
+
+    public int setKebutuhan(int kebutuhan) {
+        return kebutuhan;
+    }
+
+    public JTextField getKomoditi() {
+        return komoditi;
+    }
+
+    public String setKomoditi(String komoditi) {
+        return komoditi;
     }
 
     /**
@@ -32,20 +88,19 @@ public class PetaniTbhKerjasama extends javax.swing.JPanel {
         jSeparator1 = new javax.swing.JSeparator();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
+        judul = new javax.swing.JTextField();
+        komoditi = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        deskripsi = new javax.swing.JTextArea();
         jLabel8 = new javax.swing.JLabel();
-        jTextField6 = new javax.swing.JTextField();
+        kebutuhan = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jTextField7 = new javax.swing.JTextField();
-        jButton5 = new javax.swing.JButton();
+        btnSelesai = new javax.swing.JButton();
         cbUnit = new javax.swing.JComboBox<>();
+        image = new javax.swing.JLabel();
+        btnUnggah = new javax.swing.JButton();
 
         jPanel2.setBackground(new java.awt.Color(247, 255, 246));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -57,80 +112,63 @@ public class PetaniTbhKerjasama extends javax.swing.JPanel {
         jLabel1.setText("Judul");
         jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 70, 90, -1));
 
-        jLabel3.setText("Foto 1");
+        jLabel3.setText("Foto");
         jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 350, 120, -1));
 
-        jTextField2.setBorder(null);
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        judul.setBorder(null);
+        judul.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                judulActionPerformed(evt);
             }
         });
-        jPanel2.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 90, 390, 20));
+        jPanel2.add(judul, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 90, 390, 20));
 
-        jTextField3.setBorder(null);
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+        komoditi.setBorder(null);
+        komoditi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
+                komoditiActionPerformed(evt);
             }
         });
-        jPanel2.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 140, 390, 20));
+        jPanel2.add(komoditi, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 140, 390, 20));
 
         jLabel5.setText("Komoditi");
         jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 120, 90, -1));
 
-        jTextField5.setText("   Pilih File....");
-        jTextField5.setBorder(null);
-        jTextField5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField5ActionPerformed(evt);
-            }
-        });
-        jPanel2.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 370, 190, 20));
-
         jLabel7.setText("Deksripsi");
         jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 220, 120, -1));
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jTextArea1.setBorder(null);
-        jScrollPane1.setViewportView(jTextArea1);
+        deskripsi.setColumns(20);
+        deskripsi.setRows(5);
+        deskripsi.setBorder(null);
+        jScrollPane1.setViewportView(deskripsi);
 
         jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 240, 390, 100));
 
         jLabel8.setText("Kebutuhan (Stock)");
         jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 170, 120, -1));
 
-        jTextField6.setBorder(null);
-        jTextField6.addActionListener(new java.awt.event.ActionListener() {
+        kebutuhan.setBorder(null);
+        kebutuhan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField6ActionPerformed(evt);
+                kebutuhanActionPerformed(evt);
             }
         });
-        jPanel2.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 190, 230, 20));
+        jPanel2.add(kebutuhan, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 190, 230, 20));
 
         jLabel9.setText("Unit");
         jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 170, 120, -1));
 
-        jLabel11.setText("Foto 2");
-        jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 350, 120, -1));
-
-        jTextField7.setText("   Pilih File....");
-        jTextField7.setBorder(null);
-        jTextField7.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField7ActionPerformed(evt);
-            }
-        });
-        jPanel2.add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 370, 180, 20));
-
-        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Assets/btnSelesai.png"))); // NOI18N
-        jButton5.setBorderPainted(false);
-        jButton5.setContentAreaFilled(false);
-        jPanel2.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 410, 110, 30));
+        btnSelesai.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Assets/btnSelesai.png"))); // NOI18N
+        btnSelesai.setBorderPainted(false);
+        btnSelesai.setContentAreaFilled(false);
+        jPanel2.add(btnSelesai, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 460, 110, 30));
 
         cbUnit.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ton", "kwintal", "kg" }));
         jPanel2.add(cbUnit, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 190, 140, -1));
+        jPanel2.add(image, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 350, 250, 100));
+
+        btnUnggah.setText("Unggah");
+        jPanel2.add(btnUnggah, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 380, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -154,32 +192,26 @@ public class PetaniTbhKerjasama extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void judulActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_judulActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_judulActionPerformed
 
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+    private void komoditiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_komoditiActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField3ActionPerformed
+    }//GEN-LAST:event_komoditiActionPerformed
 
-    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
+    private void kebutuhanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kebutuhanActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField5ActionPerformed
-
-    private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField6ActionPerformed
-
-    private void jTextField7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField7ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField7ActionPerformed
+    }//GEN-LAST:event_kebutuhanActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnSelesai;
+    private javax.swing.JButton btnUnggah;
     private javax.swing.JComboBox<String> cbUnit;
-    private javax.swing.JButton jButton5;
+    private javax.swing.JTextArea deskripsi;
+    private javax.swing.JLabel image;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel7;
@@ -188,12 +220,9 @@ public class PetaniTbhKerjasama extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
+    private javax.swing.JTextField judul;
+    private javax.swing.JTextField kebutuhan;
+    private javax.swing.JTextField komoditi;
     private javax.swing.JLabel tfSubJudul;
     // End of variables declaration//GEN-END:variables
 }

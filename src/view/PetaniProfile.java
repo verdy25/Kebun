@@ -226,7 +226,7 @@ public class PetaniProfile extends javax.swing.JPanel {
         jLabel3.setText("Password");
         jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 140, 90, -1));
 
-        jLabel5.setText("Password Confirmation");
+        jLabel5.setText("Password Baru");
         jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 190, 150, -1));
 
         jLabel6.setText("E-mail");

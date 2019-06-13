@@ -59,7 +59,6 @@ public class ProfilController {
             System.out.println(e.getMessage());
         }
 
-//        v.password(data[12]);
     }
 
     public ProfilController(ProfileModel m, PengusahaProfile v2, UserModel m_user) {

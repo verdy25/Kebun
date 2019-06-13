@@ -5,6 +5,14 @@
  */
 package view;
 
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JLabel;
+import javax.swing.JTable;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author verdy
@@ -16,6 +24,78 @@ public class PetaniDftrKerjasama extends javax.swing.JPanel {
      */
     public PetaniDftrKerjasama() {
         initComponents();
+    }
+
+    public JButton btnEdit() {
+        return btnEdit;
+    }
+
+    public JButton btnHapus() {
+        return btnHapus;
+    }
+    
+    public JButton btnSimpan(){
+        return btnSimpan;
+    }
+
+    public JTable getTabelKerjasama() {
+        return tabelKerjasama;
+    }
+    
+    public void setTabelKerjasama(DefaultTableModel tabel) {
+        this.tabelKerjasama.setModel(tabel);
+    }
+
+    public void setTabel(JTable t, DefaultTableModel tabel) {
+        t.setModel(tabel);
+    }
+    
+    public JComboBox<String> getCbUnit() {
+        return cbUnit;
+    }
+
+    public void setCbUnit(JComboBox<String> cbUnit) {
+        this.cbUnit = cbUnit;
+    }
+
+    public JTextArea getDeskripsi() {
+        return deskripsi;
+    }
+
+    public void setDeskripsi(String deskripsi) {
+        this.deskripsi.setText(deskripsi);
+    }
+
+    public JLabel image() {
+        return image;
+    }
+
+    public void setImage(JLabel image) {
+        this.image = image;
+    }
+
+    public JTextField getJudul() {
+        return judul;
+    }
+
+    public void setJudul(String judul) {
+        this.judul.setText(judul);
+    }
+
+    public JTextField getKebutuhan() {
+        return kebutuhan;
+    }
+
+    public void setKebutuhan(int kebutuhan) {
+        this.kebutuhan.setText(String.valueOf(kebutuhan));
+    }
+
+    public JTextField getKomoditi() {
+        return komoditi;
+    }
+
+    public void setKomoditi(String komoditi) {
+        this.komoditi.setText(komoditi);
     }
 
     /**
@@ -31,10 +111,23 @@ public class PetaniDftrKerjasama extends javax.swing.JPanel {
         tfSubJudul = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tabelKerjasama = new javax.swing.JTable();
         btnHapus = new javax.swing.JButton();
-        btnEdit = new javax.swing.JButton();
         btnSimpan = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        judul = new javax.swing.JTextField();
+        komoditi = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        deskripsi = new javax.swing.JTextArea();
+        jLabel8 = new javax.swing.JLabel();
+        kebutuhan = new javax.swing.JTextField();
+        jLabel9 = new javax.swing.JLabel();
+        cbUnit = new javax.swing.JComboBox<>();
+        image = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        btnEdit = new javax.swing.JButton();
 
         jPanel2.setBackground(new java.awt.Color(247, 255, 246));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -43,43 +136,45 @@ public class PetaniDftrKerjasama extends javax.swing.JPanel {
         jPanel2.add(tfSubJudul, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 40, -1, -1));
         jPanel2.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 60, 540, 10));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tabelKerjasama.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
             },
             new String [] {
-                "Judul", "deskripsi", "Komoditi", "Kebutuhan", "Unit", "Tanggal update", "Foto 1", "Foto 2"
+                "Judul", "deskripsi", "Komoditi", "Kebutuhan", "Unit", "Tanggal update", "Foto 1"
             }
         ) {
-            boolean[] canEdit = new boolean [] {
-                true, true, true, true, true, false, true, true
+            Class[] types = new Class [] {
+                java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Byte.class
             };
+            boolean[] canEdit = new boolean [] {
+                true, true, true, true, true, false, true
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(jTable1);
+        tabelKerjasama.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tabelKerjasamaMouseClicked(evt);
+            }
+        });
+        jScrollPane1.setViewportView(tabelKerjasama);
 
-        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 70, 540, 330));
+        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 70, 540, 170));
 
         btnHapus.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Assets/btnHapus.png"))); // NOI18N
         btnHapus.setBorderPainted(false);
         btnHapus.setContentAreaFilled(false);
-        jPanel2.add(btnHapus, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 460, 100, -1));
-
-        btnEdit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Assets/btnEdt.png"))); // NOI18N
-        btnEdit.setBorderPainted(false);
-        btnEdit.setContentAreaFilled(false);
-        btnEdit.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEditActionPerformed(evt);
-            }
-        });
-        jPanel2.add(btnEdit, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 460, 100, -1));
+        jPanel2.add(btnHapus, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 380, 100, -1));
 
         btnSimpan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Assets/btnSimpan.png"))); // NOI18N
         btnSimpan.setBorderPainted(false);
@@ -89,7 +184,70 @@ public class PetaniDftrKerjasama extends javax.swing.JPanel {
                 btnSimpanActionPerformed(evt);
             }
         });
-        jPanel2.add(btnSimpan, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 460, 100, -1));
+        jPanel2.add(btnSimpan, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 430, 100, -1));
+
+        jLabel3.setText("Foto");
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 360, 30, -1));
+
+        judul.setBorder(null);
+        judul.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                judulActionPerformed(evt);
+            }
+        });
+        jPanel2.add(judul, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 270, 230, 20));
+
+        komoditi.setBorder(null);
+        komoditi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                komoditiActionPerformed(evt);
+            }
+        });
+        jPanel2.add(komoditi, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 270, 120, 20));
+
+        jLabel5.setText("Komoditi");
+        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 250, 90, -1));
+
+        jLabel7.setText("Deksripsi");
+        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 300, 120, -1));
+
+        deskripsi.setColumns(20);
+        deskripsi.setRows(5);
+        deskripsi.setBorder(null);
+        jScrollPane2.setViewportView(deskripsi);
+
+        jPanel2.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 320, 230, 160));
+
+        jLabel8.setText("Kebutuhan (Stock)");
+        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 300, 120, -1));
+
+        kebutuhan.setBorder(null);
+        kebutuhan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                kebutuhanActionPerformed(evt);
+            }
+        });
+        jPanel2.add(kebutuhan, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 320, 120, 20));
+
+        jLabel9.setText("Unit");
+        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 300, 120, -1));
+
+        cbUnit.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ton", "kwintal", "kg" }));
+        jPanel2.add(cbUnit, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 320, 60, -1));
+        jPanel2.add(image, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 390, 200, 90));
+
+        jLabel1.setText("Judul");
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 250, 90, -1));
+
+        btnEdit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Assets/btnEdt.png"))); // NOI18N
+        btnEdit.setBorderPainted(false);
+        btnEdit.setContentAreaFilled(false);
+        btnEdit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btnEdit, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 330, 100, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -113,23 +271,52 @@ public class PetaniDftrKerjasama extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnSimpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSimpanActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnSimpanActionPerformed
+
+    private void judulActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_judulActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_judulActionPerformed
+
+    private void komoditiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_komoditiActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_komoditiActionPerformed
+
+    private void kebutuhanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kebutuhanActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_kebutuhanActionPerformed
+
     private void btnEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnEditActionPerformed
 
-    private void btnSimpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSimpanActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnSimpanActionPerformed
+    private void tabelKerjasamaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabelKerjasamaMouseClicked
+
+    }//GEN-LAST:event_tabelKerjasamaMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnEdit;
     private javax.swing.JButton btnHapus;
     private javax.swing.JButton btnSimpan;
+    private javax.swing.JComboBox<String> cbUnit;
+    private javax.swing.JTextArea deskripsi;
+    private javax.swing.JLabel image;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTextField judul;
+    private javax.swing.JTextField kebutuhan;
+    private javax.swing.JTextField komoditi;
+    private javax.swing.JTable tabelKerjasama;
     private javax.swing.JLabel tfSubJudul;
     // End of variables declaration//GEN-END:variables
 }

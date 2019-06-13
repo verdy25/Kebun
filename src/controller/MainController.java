@@ -114,7 +114,7 @@ public class MainController {
                             PetaniVerif p6 = new PetaniVerif();
                             Petani p = new Petani(p1, p4, p5, p2, p3, p6);
 
-                            PetaniDftrKerjasamaModel m2 = new PetaniDftrKerjasamaModel();
+                            PetaniDftrKerjasamaModel m2 = new PetaniDftrKerjasamaModel(Integer.parseInt(level[0]));
                             PetaniDftrTrxModel m3 = new PetaniDftrTrxModel();
                             PetaniVerifModel m5 = new PetaniVerifModel();
                             ProfileModel m6 = new ProfileModel(Integer.parseInt(level[0]));
