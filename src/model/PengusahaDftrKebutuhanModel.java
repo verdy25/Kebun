@@ -33,7 +33,8 @@ public class PengusahaDftrKebutuhanModel extends connector.connection{
 
     public int id;
 
-    public PengusahaDftrKebutuhanModel() {
+    public PengusahaDftrKebutuhanModel(int id) {
+        this.id = id;
         try {
             connection = Connection();
             statement = connection.createStatement();
@@ -46,7 +47,7 @@ public class PengusahaDftrKebutuhanModel extends connector.connection{
         model.addColumn("id");
         model.addColumn("judul");
         model.addColumn("deskripsi");
-        model.addColumn("kategori");
+        model.addColumn("komoditi");
         model.addColumn("kebutuhan");
         model.addColumn("unit");
         model.addColumn("tanggal");
@@ -64,7 +65,7 @@ public class PengusahaDftrKebutuhanModel extends connector.connection{
                     resultSet.getInt("id_lapak"),
                     resultSet.getString("Judul"),
                     resultSet.getString("deskripsi"),
-                    resultSet.getString("kategori"),
+                    resultSet.getString("komoditi"),
                     resultSet.getInt("kebutuhan"),
                     resultSet.getString("unit"),
                     resultSet.getString("tanggal")
@@ -92,7 +93,7 @@ public class PengusahaDftrKebutuhanModel extends connector.connection{
                     resultSet.getInt("id_lapak"),
                     resultSet.getString("Judul"),
                     resultSet.getString("deskripsi"),
-                    resultSet.getString("kategori"),
+                    resultSet.getString("komoditi"),
                     resultSet.getInt("kebutuhan"),
                     resultSet.getString("unit"),
                     resultSet.getString("tanggal")
@@ -104,19 +105,19 @@ public class PengusahaDftrKebutuhanModel extends connector.connection{
         }
     }
 
-    public void buatLapakKebutuhan(String judul, String deskripsi, String kategori, int kebutuhan,
+    public void buatLapakKebutuhan(String judul, String deskripsi, String komoditi, int kebutuhan,
             String unit) throws FileNotFoundException {
         
         DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
         Date date = new Date();
         String tanggal = dateFormat.format(date);
         try {
-            String sql = "INSERT INTO lapak(judul, deskripsi, kategori, kebutuhan, unit, tanggal, id_pemilik, tipe_lapak) "
-                    + "VALUES (?,?,?,?,?,?,?,?,?);";
+            String sql = "INSERT INTO lapak(judul, deskripsi, komoditi, kebutuhan, unit, tanggal, id_pemilik, tipe_lapak) "
+                    + "VALUES (?,?,?,?,?,?,?,?);";
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setString(1, judul);
             preparedStatement.setString(2, deskripsi);
-            preparedStatement.setString(3, kategori);
+            preparedStatement.setString(3, komoditi);
             preparedStatement.setInt(4, kebutuhan);
             preparedStatement.setString(5, unit);
             preparedStatement.setString(6, tanggal);
@@ -130,16 +131,16 @@ public class PengusahaDftrKebutuhanModel extends connector.connection{
 
     }
     
-    public void updateLapakKebutuhan(String judul, String deskripsi, String kategori, int kebutuhan,
+    public void updateLapakKebutuhan(String judul, String deskripsi, String komoditi, int kebutuhan,
             String unit, int id_lapak) throws FileNotFoundException {
         
         try {
-            String sql = "update lapak set judul = ? , deskripsi = ?, kategori = ?, kebutuhan = ?, unit = ? where id_lapak = ? ";
+            String sql = "update lapak set judul = ? , deskripsi = ?, komoditi = ?, kebutuhan = ?, unit = ? where id_lapak = ? ";
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             
             preparedStatement.setString(1, judul);
             preparedStatement.setString(2, deskripsi);
-            preparedStatement.setString(3, kategori);
+            preparedStatement.setString(3, komoditi);
             preparedStatement.setInt(4, kebutuhan);
             preparedStatement.setString(5, unit);
             preparedStatement.setInt(6, id_lapak);

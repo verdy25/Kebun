@@ -18,8 +18,8 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author verdy
  */
-public class BerandaModel extends connector.connection{
-    
+public class BerandaModel extends connector.connection {
+
     private Connection connection;
     private Statement statement;
     private ResultSet resultSet;
@@ -34,8 +34,8 @@ public class BerandaModel extends connector.connection{
             System.out.println(e.getMessage());
         }
     }
-    
-    public DefaultTableModel tableKerjasama() {
+
+    public DefaultTableModel tableKerjasama(String apahayo) {
         DefaultTableModel model = new DefaultTableModel();
         model.addColumn("id");
         model.addColumn("Judul");
@@ -49,7 +49,7 @@ public class BerandaModel extends connector.connection{
         try {
             String sql = "select * from lapak where tipe_lapak = ? ";
             PreparedStatement ps = connection.prepareStatement(sql);
-            ps.setString(1, "kerjasama");
+            ps.setString(1, apahayo);
             resultSet = ps.executeQuery();
 
             int no = 0;
@@ -73,7 +73,35 @@ public class BerandaModel extends connector.connection{
         return model;
 
     }
-    
+
+    public void updateTableKerjasama(DefaultTableModel model, String apahayo) {
+
+        try {
+            String sql = "select * from lapak where tipe_lapak = ? ";
+            PreparedStatement ps = connection.prepareStatement(sql);
+            ps.setString(1, apahayo);
+            resultSet = ps.executeQuery();
+
+            int no = 0;
+            while (resultSet.next()) {
+                no++;
+                model.addRow(new Object[]{
+                    resultSet.getInt("id_lapak"),
+                    resultSet.getString("Judul"),
+                    resultSet.getString("deskripsi"),
+                    resultSet.getString("komoditi"),
+                    resultSet.getInt("kebutuhan"),
+                    resultSet.getString("unit"),
+                    resultSet.getString("tanggal"),
+                    resultSet.getBytes("foto")
+                });
+            }
+
+        } catch (SQLException e) {
+            System.out.println("tabel kerjasama : " + e.getMessage());
+        }
+    }
+
     public ImageIcon getImage(byte[] img) {
         ImageIcon image = new ImageIcon(img);
         Image im = image.getImage();
@@ -81,14 +109,15 @@ public class BerandaModel extends connector.connection{
         ImageIcon newImage = new ImageIcon(myImg);
         return newImage;
     }
-    
-    public String[] getPelapak(int id) {
+
+    public String[] getPelapak(int id_lapak) {
         String data[] = new String[2];
         try {
             String sql = "select * from user u join lapak l on l.id_pemilik = u.id WHERE l.id_lapak = ?";
             connection = Connection();
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
-            preparedStatement.setInt(1, id);
+            preparedStatement.setInt(1, id_lapak);
+            System.out.println(id_lapak);
             resultSet = preparedStatement.executeQuery();
             resultSet.next();
             data[0] = resultSet.getString("email");

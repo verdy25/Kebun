@@ -35,6 +35,10 @@ public class PetaniBeranda extends javax.swing.JPanel {
         return btnBuka;
     }    
     
+    public JButton btnRefresh() {
+        return btnRefresh;
+    }    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -50,6 +54,7 @@ public class PetaniBeranda extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         tableLapak = new javax.swing.JTable();
         btnBuka = new javax.swing.JButton();
+        btnRefresh = new javax.swing.JButton();
 
         jPanel2.setBackground(new java.awt.Color(247, 255, 246));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -74,7 +79,10 @@ public class PetaniBeranda extends javax.swing.JPanel {
         jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 80, 540, 360));
 
         btnBuka.setText("Buka");
-        jPanel2.add(btnBuka, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 450, -1, -1));
+        jPanel2.add(btnBuka, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 450, -1, -1));
+
+        btnRefresh.setText("Refresh");
+        jPanel2.add(btnRefresh, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 450, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -101,6 +109,7 @@ public class PetaniBeranda extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBuka;
+    private javax.swing.JButton btnRefresh;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
