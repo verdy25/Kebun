@@ -20,15 +20,6 @@ import javax.swing.JPasswordField;
  */
 public class Login extends javax.swing.JPanel {
 
-    Connection connection;
-    Statement statement;
-    ResultSet resultSet;
-    public static int status[];
-    private String email;
-    private String pass;
-
-    Daftar daftar = new Daftar();
-
     public Login() {
         initComponents();
     }

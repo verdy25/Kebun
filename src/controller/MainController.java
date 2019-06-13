@@ -20,6 +20,7 @@ import model.ProfileModel;
 import model.PetaniVerifModel;
 import model.UserModel;
 import view.Daftar;
+import view.Lapaak;
 import view.Login;
 import view.Main;
 import view.Pengusaha;
@@ -112,6 +113,7 @@ public class MainController {
                             PetaniProfile p4 = new PetaniProfile();
                             PetaniTbhKerjasama p5 = new PetaniTbhKerjasama();
                             PetaniVerif p6 = new PetaniVerif();
+                            Lapaak lapak = new Lapaak();
                             Petani p = new Petani(p1, p4, p5, p2, p3, p6);
 
                             PetaniDftrKerjasamaModel m2 = new PetaniDftrKerjasamaModel(Integer.parseInt(level[0]));
@@ -119,7 +121,7 @@ public class MainController {
                             PetaniVerifModel m5 = new PetaniVerifModel();
                             ProfileModel m6 = new ProfileModel(Integer.parseInt(level[0]));
 
-                            BerandaController c1 = new BerandaController(m1, p1);
+                            BerandaController c1 = new BerandaController(m1, p1, lapak);
                             PetaniKerjasamaController c2 = new PetaniKerjasamaController(m2, p2, p5);
                             PetaniDftrTrxController c3 = new PetaniDftrTrxController(m3, p3);
                             ProfilController c4 = new ProfilController(m6, p4, m4);
@@ -133,6 +135,7 @@ public class MainController {
                             p4.setVisible(false);
                             p5.setVisible(false);
                             p6.setVisible(false);
+                            lapak.setVisible(false);
                             view.dispose();
                             view = null;
                             break;
