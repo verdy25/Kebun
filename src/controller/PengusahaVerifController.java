@@ -5,6 +5,8 @@
  */
 package controller;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import model.PengusahaVerifModel;
 import view.PengusahaVerif;
 
@@ -20,5 +22,14 @@ public class PengusahaVerifController {
         this.v = v;
         this.m = m;
         v.setVisible(true);
+    }
+     private class verifikasi implements ActionListener{
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            int row = v.getTableVerif().convertRowIndexToModel(v.getTableVerif().getSelectedRow());
+            System.out.println(row);
+        }
+        
     }
 }

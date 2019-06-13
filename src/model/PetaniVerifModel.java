@@ -39,7 +39,7 @@ public class PetaniVerifModel extends connector.connection{
         model.addColumn("Status");
 
         try {
-            String sql = "select * from verif";
+            String sql = "select * from verifikasi";
             statement = connection.createStatement();
             resultSet = statement.executeQuery(sql);
 
@@ -63,7 +63,7 @@ public class PetaniVerifModel extends connector.connection{
         p_verif p = new p_verif(n);
         String nama = p.getNama();
         try {
-            String sql = "UPDATE verif SET Status = 'Disetujui' WHERE Nama = ?";
+            String sql = "UPDATE verifikasi SET Status = 'Disetujui' WHERE Nama = ?";
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setString(1, n);
             preparedStatement.executeUpdate();
