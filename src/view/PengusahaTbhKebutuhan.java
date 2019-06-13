@@ -5,6 +5,12 @@
  */
 package view;
 
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JLabel;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+
 /**
  *
  * @author verdy
@@ -17,6 +23,46 @@ public class PengusahaTbhKebutuhan extends javax.swing.JPanel {
     public PengusahaTbhKebutuhan() {
         initComponents();
     }
+    public JButton btnSelesai() {
+        return btnSelesai;
+    }
+
+    public JComboBox<String> getCbUnit() {
+        return cbUnit;
+    }
+
+    public JTextArea getDeskripsi() {
+        return deskripsi;
+    }
+
+    public String setDeskripsi(String deskripsi) {
+        return deskripsi;
+    }
+
+    public JTextField getJudul() {
+        return judul;
+    }
+
+    public String setJudul(String judul) {
+        return judul;
+    }
+
+    public JTextField getKebutuhan() {
+        return kebutuhan;
+    }
+
+    public int setKebutuhan(int kebutuhan) {
+        return kebutuhan;
+    }
+
+    public JTextField getKategori() {
+        return kategori;
+    }
+
+    public String setKategori(String kategori) {
+        return kategori;
+    }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -31,16 +77,16 @@ public class PengusahaTbhKebutuhan extends javax.swing.JPanel {
         tfSubJudul = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jLabel1 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
+        judul = new javax.swing.JTextField();
+        kategori = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        deskripsi = new javax.swing.JTextArea();
         jLabel8 = new javax.swing.JLabel();
-        jTextField6 = new javax.swing.JTextField();
+        kebutuhan = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
-        jButton5 = new javax.swing.JButton();
+        btnSelesai = new javax.swing.JButton();
         cbUnit = new javax.swing.JComboBox<>();
 
         jPanel2.setBackground(new java.awt.Color(247, 255, 246));
@@ -53,53 +99,53 @@ public class PengusahaTbhKebutuhan extends javax.swing.JPanel {
         jLabel1.setText("Judul");
         jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 70, 90, -1));
 
-        jTextField2.setBorder(null);
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        judul.setBorder(null);
+        judul.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                judulActionPerformed(evt);
             }
         });
-        jPanel2.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 90, 390, 20));
+        jPanel2.add(judul, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 90, 390, 20));
 
-        jTextField3.setBorder(null);
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+        kategori.setBorder(null);
+        kategori.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
+                kategoriActionPerformed(evt);
             }
         });
-        jPanel2.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 140, 390, 20));
+        jPanel2.add(kategori, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 140, 390, 20));
 
-        jLabel5.setText("Komoditi");
+        jLabel5.setText("Kategori");
         jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 120, 90, -1));
 
-        jLabel7.setText("Deksripsi");
+        jLabel7.setText("Deskripsi");
         jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 230, 120, -1));
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jTextArea1.setBorder(null);
-        jScrollPane1.setViewportView(jTextArea1);
+        deskripsi.setColumns(20);
+        deskripsi.setRows(5);
+        deskripsi.setBorder(null);
+        jScrollPane1.setViewportView(deskripsi);
 
         jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 250, 390, 100));
 
         jLabel8.setText("Kebutuhan (Stock)");
         jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 180, 120, -1));
 
-        jTextField6.setBorder(null);
-        jTextField6.addActionListener(new java.awt.event.ActionListener() {
+        kebutuhan.setBorder(null);
+        kebutuhan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField6ActionPerformed(evt);
+                kebutuhanActionPerformed(evt);
             }
         });
-        jPanel2.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 200, 230, 20));
+        jPanel2.add(kebutuhan, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 200, 230, 20));
 
         jLabel9.setText("Unit");
         jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 180, 120, -1));
 
-        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Assets/btnSelesai.png"))); // NOI18N
-        jButton5.setBorderPainted(false);
-        jButton5.setContentAreaFilled(false);
-        jPanel2.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 360, 110, 30));
+        btnSelesai.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Assets/btnSelesai.png"))); // NOI18N
+        btnSelesai.setBorderPainted(false);
+        btnSelesai.setContentAreaFilled(false);
+        jPanel2.add(btnSelesai, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 460, 110, 30));
 
         cbUnit.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ton", "kwintal", "kg" }));
         jPanel2.add(cbUnit, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 200, 140, -1));
@@ -126,22 +172,23 @@ public class PengusahaTbhKebutuhan extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void judulActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_judulActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_judulActionPerformed
 
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+    private void kategoriActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kategoriActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField3ActionPerformed
+    }//GEN-LAST:event_kategoriActionPerformed
 
-    private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed
+    private void kebutuhanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kebutuhanActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField6ActionPerformed
+    }//GEN-LAST:event_kebutuhanActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnSelesai;
     private javax.swing.JComboBox<String> cbUnit;
-    private javax.swing.JButton jButton5;
+    private javax.swing.JTextArea deskripsi;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel7;
@@ -150,10 +197,11 @@ public class PengusahaTbhKebutuhan extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField6;
+    private javax.swing.JTextField judul;
+    private javax.swing.JTextField kategori;
+    private javax.swing.JTextField kebutuhan;
     private javax.swing.JLabel tfSubJudul;
     // End of variables declaration//GEN-END:variables
+
+   
 }
