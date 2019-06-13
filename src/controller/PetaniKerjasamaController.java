@@ -30,7 +30,7 @@ public class PetaniKerjasamaController {
     PetaniDftrKerjasama v;
     PetaniTbhKerjasama v2;
     String judul, deskripsi, komoditi, unit;
-    String s = "D:/Kuliyah/SEM4/PBO/PR/Kebun/src/Assets/image-detail-product_1.png";
+    String s = "F:/Kuli Ah/PBO/Kebun/src/Assets/image-detail-product_1.png";
     int kebutuhan;
 
     public PetaniKerjasamaController(PetaniDftrKerjasamaModel m, PetaniDftrKerjasama v, PetaniTbhKerjasama v2) {

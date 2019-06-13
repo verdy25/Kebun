@@ -5,6 +5,9 @@
  */
 package view;
 
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author verdy
@@ -17,7 +20,18 @@ public class PengusahaVerif extends javax.swing.JPanel {
     public PengusahaVerif() {
         initComponents();
     }
+    
+    public JTable getTableVerif() {
+        return tableVerif;
+    }
+    
+    public void setTableverif(DefaultTableModel tabel) {
+        this.tableVerif.setModel(tabel);
+    }
 
+    public void setTabel(JTable t, DefaultTableModel tabel) {
+        t.setModel(tabel);
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -31,7 +45,7 @@ public class PengusahaVerif extends javax.swing.JPanel {
         tfSubJudul = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tableVerif = new javax.swing.JTable();
 
         jPanel2.setBackground(new java.awt.Color(247, 255, 246));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -40,7 +54,7 @@ public class PengusahaVerif extends javax.swing.JPanel {
         jPanel2.add(tfSubJudul, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 40, -1, -1));
         jPanel2.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 60, 540, 10));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tableVerif.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null},
                 {null, null},
@@ -51,7 +65,7 @@ public class PengusahaVerif extends javax.swing.JPanel {
                 "Nama", "JudulLapak"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tableVerif);
 
         jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 80, 540, 380));
 
@@ -82,7 +96,7 @@ public class PengusahaVerif extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable tableVerif;
     private javax.swing.JLabel tfSubJudul;
     // End of variables declaration//GEN-END:variables
 }
