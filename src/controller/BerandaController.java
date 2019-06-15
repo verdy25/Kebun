@@ -32,7 +32,7 @@ public class BerandaController {
         this.m = m;
         this.lapak = v_lapak;
         v.setVisible(true);
-        v.setTableLapak(v.getTableLapak(), m.tableKerjasama("kerjasama"));
+        v.setTableLapak(v.getTableLapak(), m.tableKerjasama("kebutuhan"));
         v.getBtnBuka().addActionListener(new buka());
         v.btnRefresh().addActionListener(new refresh());
     }
@@ -42,7 +42,7 @@ public class BerandaController {
         this.m = m;
         this.lapak = v_lapak;
         v2.setVisible(true);
-        v2.setTableLapak(v2.getTableLapak(), m.tableKerjasama("kebutuhan"));
+        v2.setTableLapak(v2.getTableLapak(), m.tableKerjasama("kerjasama"));
         v2.btnBuka().addActionListener(new buka2());
         v2.btnRefresh().addActionListener(new refresh2());
     }

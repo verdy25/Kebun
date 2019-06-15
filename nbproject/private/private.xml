@@ -12,10 +12,9 @@
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/Kuliyah/SEM4/PBO/PR/Kebun/src/view/PetaniTbhKerjasama.java</file>
-            <file>file:/D:/Kuliyah/SEM4/PBO/PR/Kebun/src/controller/PetaniKerjasamaController.java</file>
-            <file>file:/D:/Kuliyah/SEM4/PBO/PR/Kebun/src/model/PetaniDftrKerjasamaModel.java</file>
-            <file>file:/D:/Kuliyah/SEM4/PBO/PR/Kebun/src/view/PetaniDftrKerjasama.java</file>
+            <file>file:/C:/Users/Verdy/Documents/NetBeansProjects/Kebun/src/controller/BerandaController.java</file>
+            <file>file:/C:/Users/Verdy/Documents/NetBeansProjects/Kebun/src/model/BerandaModel.java</file>
+            <file>file:/C:/Users/Verdy/Documents/NetBeansProjects/Kebun/src/main/Kebun.java</file>
         </group>
     </open-files>
 </project-private>
