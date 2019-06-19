@@ -15,11 +15,11 @@ import javax.swing.JTextArea;
  */
 public class Lapaak extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Lapaak
-     */
+    int MouseX;
+    int MouseY;
     public Lapaak() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
      public JButton getBtnMau() {
@@ -66,6 +66,14 @@ public class Lapaak extends javax.swing.JFrame {
         return phone;
     }
 
+    public JLabel getKomoditi() {
+        return komoditi;
+    }
+
+    public void setKomoditi(String komoditi) {
+        this.komoditi.setText(komoditi);
+    }
+
     public void setPhone(String phone) {
         this.phone.setText(phone);
     }
@@ -93,7 +101,7 @@ public class Lapaak extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         tanggal = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
+        komoditi = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         kebutuhan = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
@@ -102,8 +110,11 @@ public class Lapaak extends javax.swing.JFrame {
         btnMau = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         deskripsi = new javax.swing.JTextArea();
+        btnClose2 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
 
         jPanel2.setBackground(new java.awt.Color(247, 255, 246));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -127,9 +138,9 @@ public class Lapaak extends javax.swing.JFrame {
         tanggal.setText(": 1");
         jPanel2.add(tanggal, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 110, 170, -1));
 
-        jLabel8.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel8.setText(": 1");
-        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 150, 170, -1));
+        komoditi.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        komoditi.setText(": 1");
+        jPanel2.add(komoditi, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 150, 170, -1));
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Assets/imgKebutuhan.png"))); // NOI18N
@@ -173,6 +184,28 @@ public class Lapaak extends javax.swing.JFrame {
         jScrollPane1.setViewportView(deskripsi);
 
         jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 250, 580, 170));
+
+        btnClose2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Assets/close.png"))); // NOI18N
+        btnClose2.setBorderPainted(false);
+        btnClose2.setContentAreaFilled(false);
+        btnClose2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnClose2ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btnClose2, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 10, 30, 20));
+
+        jLabel1.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                jLabel1MouseDragged(evt);
+            }
+        });
+        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jLabel1MousePressed(evt);
+            }
+        });
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 620, 30));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -223,6 +256,22 @@ public class Lapaak extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnMauActionPerformed
 
+    private void btnClose2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClose2ActionPerformed
+       this.setVisible(false);
+    }//GEN-LAST:event_btnClose2ActionPerformed
+
+    private void jLabel1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MousePressed
+        MouseX = evt.getX();
+        MouseY = evt.getY();
+    }//GEN-LAST:event_jLabel1MousePressed
+
+    private void jLabel1MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseDragged
+        int kordinatX = evt.getXOnScreen();
+        int kordinatY = evt.getYOnScreen();
+
+        this.setLocation(kordinatX - MouseX, kordinatY - MouseY);
+    }//GEN-LAST:event_jLabel1MouseDragged
+    
     /**
      * @param args the command line arguments
      */
@@ -253,26 +302,31 @@ public class Lapaak extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
+                
                 new Lapaak().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnClose;
+    private javax.swing.JButton btnClose1;
+    private javax.swing.JButton btnClose2;
     private javax.swing.JButton btnMau;
     private javax.swing.JTextArea deskripsi;
     private javax.swing.JLabel email;
     private javax.swing.JLabel image;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel judul;
     private javax.swing.JLabel kebutuhan;
+    private javax.swing.JLabel komoditi;
     private javax.swing.JLabel phone;
     private javax.swing.JLabel tanggal;
     // End of variables declaration//GEN-END:variables

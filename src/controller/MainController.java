@@ -105,6 +105,7 @@ public class MainController {
                     System.out.println(level[1]);
                     BerandaModel m1 = new BerandaModel();
                     UserModel m4 = new UserModel();
+                    Lapaak lapak = new Lapaak();
                     switch (Integer.parseInt(level[1])) {
                         case 1:
                             PetaniBeranda p1 = new PetaniBeranda();
@@ -113,7 +114,6 @@ public class MainController {
                             PetaniProfile p4 = new PetaniProfile();
                             PetaniTbhKerjasama p5 = new PetaniTbhKerjasama();
                             PetaniVerif p6 = new PetaniVerif();
-                            Lapaak lapak = new Lapaak();
                             Petani p = new Petani(p1, p4, p5, p2, p3, p6);
 
                             PetaniDftrKerjasamaModel m2 = new PetaniDftrKerjasamaModel(Integer.parseInt(level[0]));
@@ -148,12 +148,12 @@ public class MainController {
                             PengusahaVerif ps6 = new PengusahaVerif();
                             Pengusaha ps = new Pengusaha(ps1, ps2, ps5, ps4, ps3, ps6);
 
-                            PengusahaDftrKebutuhanModel mp2 = new PengusahaDftrKebutuhanModel();
+                            PengusahaDftrKebutuhanModel mp2 = new PengusahaDftrKebutuhanModel(Integer.parseInt(level[0]));
                             PengusahaDftrTrxModel mp3 = new PengusahaDftrTrxModel();
                             PengusahaVerifModel mp5 = new PengusahaVerifModel();
                             ProfileModel mp6 = new ProfileModel(Integer.parseInt(level[0]));
 
-                            BerandaController cp1 = new BerandaController(m1, ps1);
+                            BerandaController cp1 = new BerandaController(m1, ps1, lapak);
                             PengusahaDftrKebutuhanController cp2 = new PengusahaDftrKebutuhanController(mp2, ps2, ps5);
                             PengusahaDftrTrxController cp3 = new PengusahaDftrTrxController(mp3, ps3);
                             ProfilController cp4 = new ProfilController(mp6, ps4, m4);

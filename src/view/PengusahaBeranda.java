@@ -5,6 +5,7 @@
  */
 package view;
 
+import javax.swing.JButton;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
@@ -28,6 +29,14 @@ public class PengusahaBeranda extends javax.swing.JPanel {
     public void setTableLapak(JTable t, DefaultTableModel tabel) {
         t.setModel(tabel);
     }
+    
+    public JButton btnBuka(){
+        return btnBuka;
+    }
+    
+    public JButton btnRefresh(){
+        return btnRefresh;
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -43,6 +52,8 @@ public class PengusahaBeranda extends javax.swing.JPanel {
         jSeparator1 = new javax.swing.JSeparator();
         jScrollPane1 = new javax.swing.JScrollPane();
         tableLapak = new javax.swing.JTable();
+        btnRefresh = new javax.swing.JButton();
+        btnBuka = new javax.swing.JButton();
 
         JPanelBeranda.setBackground(new java.awt.Color(247, 255, 246));
         JPanelBeranda.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -64,7 +75,13 @@ public class PengusahaBeranda extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(tableLapak);
 
-        JPanelBeranda.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 80, 540, 380));
+        JPanelBeranda.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 80, 540, 360));
+
+        btnRefresh.setText("Refresh");
+        JPanelBeranda.add(btnRefresh, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 450, -1, -1));
+
+        btnBuka.setText("Buka");
+        JPanelBeranda.add(btnBuka, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 450, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -91,6 +108,8 @@ public class PengusahaBeranda extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel JPanelBeranda;
+    private javax.swing.JButton btnBuka;
+    private javax.swing.JButton btnRefresh;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTable tableLapak;
