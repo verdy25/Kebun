@@ -108,6 +108,7 @@ public class Pengusaha extends javax.swing.JFrame {
         btnTransaksi = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel13.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
