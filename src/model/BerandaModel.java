@@ -34,6 +34,21 @@ public class BerandaModel extends connector.connection {
             System.out.println(e.getMessage());
         }
     }
+    
+    public int getIdPemilik(int id){
+        String sql = "SELECT id_pemilik FROM lapak WHERE id_lapak = ?";
+        try{
+            PreparedStatement ps = connection.prepareStatement(sql);
+            ps.setInt(1, id);
+            resultSet = ps.executeQuery();
+            if(resultSet.next()){
+                return resultSet.getInt("id_lapak");
+            }
+        } catch(Exception e){
+            e.printStackTrace();
+        }
+        return 0;
+    }
 
     public DefaultTableModel tableKerjasama(String apahayo) {
         DefaultTableModel model = new DefaultTableModel();
@@ -51,7 +66,6 @@ public class BerandaModel extends connector.connection {
             PreparedStatement ps = connection.prepareStatement(sql);
             ps.setString(1, apahayo);
             resultSet = ps.executeQuery();
-
             int no = 0;
             while (resultSet.next()) {
                 no++;

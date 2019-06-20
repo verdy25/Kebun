@@ -37,7 +37,7 @@ public class ProfileModel extends connector.connection {
     }
 
     public String[] getProfil() {
-        String data[] = new String[13];
+        String data[] = new String[14];
         try {
             String sql = "select * from user where id = ?";
             connection = Connection();
@@ -58,6 +58,7 @@ public class ProfileModel extends connector.connection {
             data[10] = resultSet.getString("deskripsi");
             data[11] = resultSet.getString("website");
             data[12] = resultSet.getString("password");
+            data[13] = resultSet.getString("id");
         } catch (SQLException se) {
             System.out.println(se.getMessage());
         } catch (Exception e) {

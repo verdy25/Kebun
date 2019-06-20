@@ -30,7 +30,7 @@ public class PetaniVerifModel extends connector.connection{
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
-    }
+    } 
     
     public DefaultTableModel tableVerif() {
         DefaultTableModel model = new DefaultTableModel();
@@ -57,6 +57,20 @@ public class PetaniVerifModel extends connector.connection{
         }
         return model;
 
+    }
+    public void tambahverif(int id_petani, int id_pengusaha, int id_lapak){
+        try{
+            String sql = "INSERT INTO verifikasi (id_petani, id_pengusaha, id_lapak, status) VALUES (?, ?, ?, ?)";
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setInt(1, id_petani);
+            preparedStatement.setInt(2, id_pengusaha);
+            preparedStatement.setInt(3, id_lapak);
+            preparedStatement.setString(4, "Belum Diverifikasi");
+            preparedStatement.executeUpdate();
+        } catch(Exception e){
+            e.printStackTrace();
+        }
+        
     }
 
     public void verifikasi(String n) {

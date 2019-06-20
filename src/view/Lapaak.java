@@ -253,7 +253,7 @@ public class Lapaak extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnMauActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMauActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_btnMauActionPerformed
 
     private void btnClose2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClose2ActionPerformed

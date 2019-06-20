@@ -125,7 +125,7 @@ public class MainController {
                             PetaniKerjasamaController c2 = new PetaniKerjasamaController(m2, p2, p5);
                             PetaniDftrTrxController c3 = new PetaniDftrTrxController(m3, p3);
                             ProfilController c4 = new ProfilController(m6, p4, m4);
-                            PetaniVerifController c5 = new PetaniVerifController(m5, p6);
+                            PetaniVerifController c5 = new PetaniVerifController(m6, m5, p6);
 
                             p.setNama_user(level[2]);
                             p.setVisible(true);
