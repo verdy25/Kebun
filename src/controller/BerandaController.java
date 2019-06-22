@@ -7,9 +7,8 @@ package controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import model.BerandaModel;
 import view.Lapaak;
@@ -35,6 +34,7 @@ public class BerandaController {
         v.setTableLapak(v.getTableLapak(), m.tableKerjasama("kebutuhan"));
         v.getBtnBuka().addActionListener(new buka());
         v.btnRefresh().addActionListener(new refresh());
+        v_lapak.btnMau().addActionListener(new mau());
     }
 
     public BerandaController(BerandaModel m, PengusahaBeranda v2, Lapaak v_lapak) {
@@ -45,6 +45,15 @@ public class BerandaController {
         v2.setTableLapak(v2.getTableLapak(), m.tableKerjasama("kerjasama"));
         v2.btnBuka().addActionListener(new buka2());
         v2.btnRefresh().addActionListener(new refresh2());
+        v_lapak.btnMau().addActionListener(new mau());
+    }
+
+    private class mau implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+           m.sayaMau();
+            JOptionPane.showMessageDialog(null, "Segera hubungi pelapak, agar permintaan segera diverifikasi");
+        }
     }
 
     private class refresh implements ActionListener {
@@ -53,7 +62,7 @@ public class BerandaController {
         public void actionPerformed(ActionEvent e) {
             DefaultTableModel model = (DefaultTableModel) v.getTableLapak().getModel();
             model.setRowCount(0);
-            m.updateTableKerjasama(model, "kerjasama");
+            m.updateTableKerjasama(model, "kebutuhan");
         }
     }
     
@@ -63,7 +72,7 @@ public class BerandaController {
         public void actionPerformed(ActionEvent e) {
             DefaultTableModel model = (DefaultTableModel) v2.getTableLapak().getModel();
             model.setRowCount(0);
-            m.updateTableKerjasama(model, "kebutuhan");
+            m.updateTableKerjasama(model, "kerjasama");
         }
     }
 
@@ -118,5 +127,7 @@ public class BerandaController {
             lapak.setPhone(": " + pelapak[1]);
         }
     }
+    
+    
 
 }

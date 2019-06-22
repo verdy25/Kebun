@@ -5,6 +5,8 @@
  */
 package view;
 
+import javax.swing.JButton;
+import javax.swing.JLabel;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
@@ -20,12 +22,15 @@ public class PengusahaVerif extends javax.swing.JPanel {
     public PengusahaVerif() {
         initComponents();
     }
-    
-    public JTable getTableVerif() {
+    public JTable getTable_verif() {
         return tableVerif;
     }
-    
-    public void setTableverif(DefaultTableModel tabel) {
+
+    public JButton btnVerif() {
+        return btnVerif;
+    }
+
+    public void setTable_verif(DefaultTableModel tabel) {
         this.tableVerif.setModel(tabel);
     }
 
@@ -42,6 +47,7 @@ public class PengusahaVerif extends javax.swing.JPanel {
     private void initComponents() {
 
         jPanel2 = new javax.swing.JPanel();
+        btnVerif = new javax.swing.JButton();
         tfSubJudul = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -50,19 +56,22 @@ public class PengusahaVerif extends javax.swing.JPanel {
         jPanel2.setBackground(new java.awt.Color(247, 255, 246));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        btnVerif.setText("Verifikasi");
+        jPanel2.add(btnVerif, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 470, -1, -1));
+
         tfSubJudul.setText("Verifikasi");
         jPanel2.add(tfSubJudul, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 40, -1, -1));
         jPanel2.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 60, 540, 10));
 
         tableVerif.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null}
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
             },
             new String [] {
-                "Nama", "JudulLapak"
+                "Lapak", "Nama", "Status"
             }
         ));
         jScrollPane1.setViewportView(tableVerif);
@@ -93,6 +102,7 @@ public class PengusahaVerif extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnVerif;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;

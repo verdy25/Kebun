@@ -9,15 +9,13 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
-import model.PengusahaBerandaModel;
 import model.PengusahaDftrKebutuhanModel;
-import model.PengusahaDftrTrxModel;
-import model.PengusahaVerifModel;
+
 import model.BerandaModel;
 import model.PetaniDftrKerjasamaModel;
-import model.PetaniDftrTrxModel;
+import model.TransaksiModel;
 import model.ProfileModel;
-import model.PetaniVerifModel;
+import model.VerifModel;
 import model.UserModel;
 import view.Daftar;
 import view.Lapaak;
@@ -102,9 +100,11 @@ public class MainController {
             } else {
                 try {
                     String level[] = model.login(email, password);
-                    System.out.println(level[1]);
-                    BerandaModel m1 = new BerandaModel();
+                    int id = Integer.parseInt(level[0]);
+                    BerandaModel m1 = new BerandaModel(id);
+                    TransaksiModel m3 = new TransaksiModel(id);
                     UserModel m4 = new UserModel();
+                    VerifModel m5 = new VerifModel(id);
                     Lapaak lapak = new Lapaak();
                     switch (Integer.parseInt(level[1])) {
                         case 1:
@@ -116,16 +116,14 @@ public class MainController {
                             PetaniVerif p6 = new PetaniVerif();
                             Petani p = new Petani(p1, p4, p5, p2, p3, p6);
 
-                            PetaniDftrKerjasamaModel m2 = new PetaniDftrKerjasamaModel(Integer.parseInt(level[0]));
-                            PetaniDftrTrxModel m3 = new PetaniDftrTrxModel();
-                            PetaniVerifModel m5 = new PetaniVerifModel();
-                            ProfileModel m6 = new ProfileModel(Integer.parseInt(level[0]));
+                            PetaniDftrKerjasamaModel m2 = new PetaniDftrKerjasamaModel(id);
+                            ProfileModel m6 = new ProfileModel(id);
 
                             BerandaController c1 = new BerandaController(m1, p1, lapak);
                             PetaniKerjasamaController c2 = new PetaniKerjasamaController(m2, p2, p5);
-                            PetaniDftrTrxController c3 = new PetaniDftrTrxController(m3, p3);
+                            TransaksiController c3 = new TransaksiController(m3, p3);
                             ProfilController c4 = new ProfilController(m6, p4, m4);
-                            PetaniVerifController c5 = new PetaniVerifController(m5, p6);
+                            VerifController c5 = new VerifController(m5, p6);
 
                             p.setNama_user(level[2]);
                             p.setVisible(true);
@@ -148,16 +146,14 @@ public class MainController {
                             PengusahaVerif ps6 = new PengusahaVerif();
                             Pengusaha ps = new Pengusaha(ps1, ps2, ps5, ps4, ps3, ps6);
 
-                            PengusahaDftrKebutuhanModel mp2 = new PengusahaDftrKebutuhanModel(Integer.parseInt(level[0]));
-                            PengusahaDftrTrxModel mp3 = new PengusahaDftrTrxModel();
-                            PengusahaVerifModel mp5 = new PengusahaVerifModel();
-                            ProfileModel mp6 = new ProfileModel(Integer.parseInt(level[0]));
+                            PengusahaDftrKebutuhanModel mp2 = new PengusahaDftrKebutuhanModel(id);
+                            ProfileModel mp6 = new ProfileModel(id);
 
                             BerandaController cp1 = new BerandaController(m1, ps1, lapak);
                             PengusahaDftrKebutuhanController cp2 = new PengusahaDftrKebutuhanController(mp2, ps2, ps5);
-                            PengusahaDftrTrxController cp3 = new PengusahaDftrTrxController(mp3, ps3);
+                            TransaksiController cp3 = new TransaksiController(m3, ps3);
                             ProfilController cp4 = new ProfilController(mp6, ps4, m4);
-                            PengusahaVerifController cp5 = new PengusahaVerifController(mp5, ps6);
+                            VerifController cp5 = new VerifController(m5, ps6);
 
                             ps.setNama_user(level[2]);
                             ps.setVisible(true);

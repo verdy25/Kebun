@@ -22,7 +22,7 @@ public class Lapaak extends javax.swing.JFrame {
         initComponents();
     }
 
-     public JButton getBtnMau() {
+     public JButton btnMau() {
         return btnMau;
     }
 
@@ -110,8 +110,10 @@ public class Lapaak extends javax.swing.JFrame {
         btnMau = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         deskripsi = new javax.swing.JTextArea();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
 
         jPanel2.setBackground(new java.awt.Color(247, 255, 246));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -182,6 +184,17 @@ public class Lapaak extends javax.swing.JFrame {
 
         jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 250, 580, 170));
 
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Assets/close.png"))); // NOI18N
+        jButton1.setToolTipText("");
+        jButton1.setBorderPainted(false);
+        jButton1.setContentAreaFilled(false);
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 20, -1, -1));
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -231,6 +244,10 @@ public class Lapaak extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnMauActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -271,6 +288,7 @@ public class Lapaak extends javax.swing.JFrame {
     private javax.swing.JTextArea deskripsi;
     private javax.swing.JLabel email;
     private javax.swing.JLabel image;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel5;

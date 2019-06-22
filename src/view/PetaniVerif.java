@@ -23,7 +23,7 @@ public class PetaniVerif extends javax.swing.JPanel {
         initComponents();
     }
     public JTable getTable_verif() {
-        return tblVerif;
+        return tableVerif;
     }
 
     public JButton btnVerif() {
@@ -31,37 +31,13 @@ public class PetaniVerif extends javax.swing.JPanel {
     }
 
     public void setTable_verif(DefaultTableModel tabel) {
-        this.tblVerif.setModel(tabel);
+        this.tableVerif.setModel(tabel);
     }
 
     public void setTabel(JTable t, DefaultTableModel tabel) {
         t.setModel(tabel);
     }
 
-    public JLabel getLapak() {
-        return labelLapak;
-    }
-
-    public void setLapak(String lapak) {
-        this.labelLapak.setText(lapak);
-    }
-
-    public JLabel getNama() {
-        return labelNama;
-    }
-
-    public void setNama(String nama) {
-        this.labelNama.setText(nama);
-    }
-
-    public JLabel getStatus() {
-        return labelStatus;
-    }
-
-    public void setStatus(String status) {
-        this.labelStatus.setText(status);
-    }
-    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -76,11 +52,8 @@ public class PetaniVerif extends javax.swing.JPanel {
         tfSubJudul = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tblVerif = new javax.swing.JTable();
+        tableVerif = new javax.swing.JTable();
         btnVerif = new javax.swing.JButton();
-        labelNama = new javax.swing.JLabel();
-        labelLapak = new javax.swing.JLabel();
-        labelStatus = new javax.swing.JLabel();
 
         jPanel2.setBackground(new java.awt.Color(247, 255, 246));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -89,7 +62,7 @@ public class PetaniVerif extends javax.swing.JPanel {
         jPanel2.add(tfSubJudul, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 40, -1, -1));
         jPanel2.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 60, 540, 10));
 
-        tblVerif.setModel(new javax.swing.table.DefaultTableModel(
+        tableVerif.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
                 {null, null, null},
@@ -108,30 +81,21 @@ public class PetaniVerif extends javax.swing.JPanel {
                 return types [columnIndex];
             }
         });
-        tblVerif.addMouseListener(new java.awt.event.MouseAdapter() {
+        tableVerif.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tblVerifMouseClicked(evt);
+                tableVerifMouseClicked(evt);
             }
         });
-        jScrollPane1.setViewportView(tblVerif);
-        if (tblVerif.getColumnModel().getColumnCount() > 0) {
-            tblVerif.getColumnModel().getColumn(1).setResizable(false);
-            tblVerif.getColumnModel().getColumn(2).setResizable(false);
+        jScrollPane1.setViewportView(tableVerif);
+        if (tableVerif.getColumnModel().getColumnCount() > 0) {
+            tableVerif.getColumnModel().getColumn(1).setResizable(false);
+            tableVerif.getColumnModel().getColumn(2).setResizable(false);
         }
 
         jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 80, 540, 370));
 
         btnVerif.setText("Verifikasi");
         jPanel2.add(btnVerif, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 470, -1, -1));
-
-        labelNama.setText("jLabel1");
-        jPanel2.add(labelNama, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 200, -1, -1));
-
-        labelLapak.setText("jLabel2");
-        jPanel2.add(labelLapak, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 180, -1, -1));
-
-        labelStatus.setText("jLabel3");
-        jPanel2.add(labelStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 220, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -155,12 +119,9 @@ public class PetaniVerif extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void tblVerifMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblVerifMouseClicked
-        int row = tblVerif.getSelectedRow();
-        setNama(tblVerif.getModel().getValueAt(row, 0).toString());
-        setLapak(tblVerif.getModel().getValueAt(row, 1).toString());
-        setStatus(tblVerif.getModel().getValueAt(row, 2).toString());
-    }//GEN-LAST:event_tblVerifMouseClicked
+    private void tableVerifMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableVerifMouseClicked
+       
+    }//GEN-LAST:event_tableVerifMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -168,10 +129,7 @@ public class PetaniVerif extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JLabel labelLapak;
-    private javax.swing.JLabel labelNama;
-    private javax.swing.JLabel labelStatus;
-    private javax.swing.JTable tblVerif;
+    private javax.swing.JTable tableVerif;
     private javax.swing.JLabel tfSubJudul;
     // End of variables declaration//GEN-END:variables
 }

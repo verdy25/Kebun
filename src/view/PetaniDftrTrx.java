@@ -5,6 +5,10 @@
  */
 package view;
 
+import javax.swing.JButton;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author verdy
@@ -16,6 +20,18 @@ public class PetaniDftrTrx extends javax.swing.JPanel {
      */
     public PetaniDftrTrx() {
         initComponents();
+    }
+    
+    public JButton btnRefresh(){
+        return btnRefresh;
+    }
+    
+    public JTable getTable() {
+        return tableTransaksi;
+    }
+    
+    public void setTabel(JTable t, DefaultTableModel tabel) {
+        t.setModel(tabel);
     }
 
     /**
@@ -31,7 +47,8 @@ public class PetaniDftrTrx extends javax.swing.JPanel {
         tfSubJudul = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tableTransaksi = new javax.swing.JTable();
+        btnRefresh = new javax.swing.JButton();
 
         jPanel2.setBackground(new java.awt.Color(247, 255, 246));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -40,7 +57,7 @@ public class PetaniDftrTrx extends javax.swing.JPanel {
         jPanel2.add(tfSubJudul, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 40, -1, -1));
         jPanel2.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 60, 540, 10));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tableTransaksi.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
                 {null, null, null},
@@ -66,9 +83,12 @@ public class PetaniDftrTrx extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tableTransaksi);
 
         jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 70, 540, 330));
+
+        btnRefresh.setText("Refresh");
+        jPanel2.add(btnRefresh, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 460, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -94,10 +114,11 @@ public class PetaniDftrTrx extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnRefresh;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable tableTransaksi;
     private javax.swing.JLabel tfSubJudul;
     // End of variables declaration//GEN-END:variables
 }

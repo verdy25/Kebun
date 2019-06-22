@@ -5,6 +5,7 @@
  */
 package model;
 
+import java.awt.HeadlessException;
 import java.awt.Image;
 import java.io.File;
 import java.io.FileInputStream;
@@ -38,7 +39,7 @@ public class PengusahaDftrKebutuhanModel extends connector.connection{
         try {
             connection = Connection();
             statement = connection.createStatement();
-        } catch (Exception e) {
+        } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
     }
@@ -159,8 +160,8 @@ public class PengusahaDftrKebutuhanModel extends connector.connection{
             preparedStatement.setInt(1, id_lapak);
             preparedStatement.executeUpdate();
             JOptionPane.showMessageDialog(null, "Data deleted");
-        } catch (Exception e) {
-            e.getMessage();
+        } catch (HeadlessException | SQLException e) {
+            System.out.println("delete lapak : "+e.getMessage());
         }
     }
 

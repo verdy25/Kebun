@@ -24,13 +24,14 @@ public class BerandaModel extends connector.connection {
     private Statement statement;
     private ResultSet resultSet;
 
-    public int id_pelapak;
+    public int id_pelapak, id_lapak, id;
 
-    public BerandaModel() {
+    public BerandaModel(int id) {
         try {
+            this.id = id;
             connection = Connection();
             statement = connection.createStatement();
-        } catch (Exception e) {
+        } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
     }
@@ -120,6 +121,8 @@ public class BerandaModel extends connector.connection {
             System.out.println(id_lapak);
             resultSet = preparedStatement.executeQuery();
             resultSet.next();
+            this.id_pelapak = resultSet.getInt("id_pemilik");
+            this.id_lapak = id_lapak;                    
             data[0] = resultSet.getString("email");
             data[1] = resultSet.getString("hp");
         } catch (SQLException se) {
@@ -128,5 +131,19 @@ public class BerandaModel extends connector.connection {
             System.out.println(e.getMessage());
         }
         return data;
+    }
+
+    public void sayaMau() {
+        try {
+            String sql = "INSERT INTO verifikasi(id_lapak, peminat, status) VALUES (?,?,?)";
+            connection = Connection();
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setInt(1, id_lapak);
+            preparedStatement.setInt(2, id);
+            preparedStatement.setString(3, "Belum disetujui");
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
     }
 }
