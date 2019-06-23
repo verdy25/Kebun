@@ -49,9 +49,10 @@ public class BerandaController {
     }
 
     private class mau implements ActionListener {
+
         @Override
         public void actionPerformed(ActionEvent e) {
-           m.sayaMau();
+            m.sayaMau();
             JOptionPane.showMessageDialog(null, "Segera hubungi pelapak, agar permintaan segera diverifikasi");
         }
     }
@@ -65,7 +66,7 @@ public class BerandaController {
             m.updateTableKerjasama(model, "kebutuhan");
         }
     }
-    
+
     private class refresh2 implements ActionListener {
 
         @Override
@@ -91,14 +92,10 @@ public class BerandaController {
             int kebutuhan = Integer.parseInt(v.getTableLapak().getModel().getValueAt(row, 4).toString());
             String unit = v.getTableLapak().getModel().getValueAt(row, 5).toString();
 
-            byte[] foto = (byte[]) v.getTableLapak().getModel().getValueAt(row, 7);
-            ImageIcon icon = m.getImage(foto);
-
             lapak.setJudul(judul);
             lapak.setDeskripsi(": " + deksripsi);
             lapak.setKomoditi(": " + komoditi);
             lapak.setKebutuhan(": " + String.valueOf(kebutuhan) + " " + unit);
-            lapak.getImage().setIcon(icon);
             lapak.setEmail(": " + pelapak[0]);
             lapak.setPhone(": " + pelapak[1]);
         }
@@ -118,16 +115,18 @@ public class BerandaController {
             String komoditi = v2.getTableLapak().getModel().getValueAt(row, 3).toString();
             int kebutuhan = Integer.parseInt(v2.getTableLapak().getModel().getValueAt(row, 4).toString());
             String unit = v2.getTableLapak().getModel().getValueAt(row, 5).toString();
-
+            
+            byte[] foto = (byte[]) v2.getTableLapak().getModel().getValueAt(row, 7);
+            ImageIcon icon = m.getImage(foto);
+            
             lapak.setJudul(judul);
             lapak.setDeskripsi(": " + deksripsi);
             lapak.setKomoditi(": " + komoditi);
             lapak.setKebutuhan(": " + String.valueOf(kebutuhan) + " " + unit);
+            lapak.getImage().setIcon(icon);
             lapak.setEmail(": " + pelapak[0]);
             lapak.setPhone(": " + pelapak[1]);
         }
     }
-    
-    
 
 }
